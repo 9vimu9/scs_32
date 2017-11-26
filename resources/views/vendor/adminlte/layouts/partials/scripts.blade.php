@@ -4,11 +4,13 @@
 <!-- Laravel App -->
 <script src="{{ url (mix('/js/app.js')) }}" type="text/javascript"></script>
 
+{{-- parsley --}}
+<script src="{{ asset('js/libs/parsley.js') }}"></script>
+
 {{-- moment --}}
 <script src="{{ asset('js/libs/moment.min.js') }}"></script>
 
-{{-- parsley --}}
-<script src="{{ asset('js/libs/parsley.js') }}"></script>
+
 
 {{-- daterangepicker --}}
 <script src="{{ asset('js/libs/daterangepicker.js') }}"></script>

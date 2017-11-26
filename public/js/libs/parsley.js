@@ -2491,7 +2491,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 //# sourceMappingURL=parsley.js.map
 //mine
-$(document).ready(function(){
- $('form').parsley();
+$( document ).ready(function() {
+  $('.validated_form').parsley();
 });
 //eof mine
