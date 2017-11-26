@@ -11,6 +11,14 @@
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">{{ trans('adminlte_lang::message.togglenav') }}</span>
         </a>
+
+        <div class="collapse navbar-collapse pull-left" >
+          <ul class="nav navbar-nav">
+            <li><a ><font size="5">@yield('contentheader_title')</font></a></li>
+          </ul>
+
+        </div>
+
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">

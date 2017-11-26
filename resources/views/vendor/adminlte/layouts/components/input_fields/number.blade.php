@@ -20,7 +20,10 @@ validation
       name="{{$name}}"
       value='{{$value ?? ""}}'
       data-parsley-trigger="focusin focusout"
-      data-parsley-pattern="{{$regex ?? ''}}"
+    @isset($regex)
+      data-parsley-pattern="{{$regex}}"
+
+    @endisset
       data-parsley-type="number"
       {{$validation ?? ''}}
     >

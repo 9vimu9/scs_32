@@ -40,13 +40,17 @@ desired effect
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
-        @include('adminlte::layouts.partials.contentheader')
 
         <!-- Main content -->
         <section class="content">
-            <!-- Your Page Content Here -->
-            @yield('main-content')
-
+          <div class="container-fluid spark-screen">
+        		<div class="row">
+        			<div class="col-md-12">
+                <!-- Your Page Content Here -->
+                @yield('main-content')
+              </div>
+            </div>
+          </div>
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 

@@ -12,6 +12,9 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    'company_name'            => 'SARATHCHANDRA CATERING SERVICE',
+    'company_name_short'      => 'SCS',
+    'sw_name'                 => 'INVENTORY MANAGEMENT SYSTEM',
 
     'logged'                  => 'You are logged in!',
     'someproblems'            => 'There were some problems with your input.',
