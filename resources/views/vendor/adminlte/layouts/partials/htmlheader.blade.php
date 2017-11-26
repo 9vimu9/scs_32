@@ -6,7 +6,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link href="{{ mix('/css/all.css') }}" rel="stylesheet" type="text/css" />
+    {{-- parsley --}}
     <link href="{{ asset('css/libs/parsley.css') }}" rel="stylesheet">
+    {{-- datetrangepicker --}}
+    <link href="{{ asset('css/libs/daterangepicker.css') }}" rel="stylesheet">
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
