@@ -13,7 +13,15 @@ class Createitremstable extends Migration
      */
     public function up()
     {
-        //
+      Schema::create('items', function (Blueprint $table) {
+          $table->increments('id');
+          $table->string('name')->unique();
+          $table->integer('initial_quantity');
+          $table->integer('quantity')->default(0);
+          // $table->tinyInteger('status')->default(1)
+          $table->softDeletes();
+          $table->timestamps();
+      });
     }
 
     /**
@@ -23,6 +31,6 @@ class Createitremstable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('items');
     }
 }

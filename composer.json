@@ -24,7 +24,13 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files" : [
+                    "app/Helpers/trait_helper.php",
+                    "app/Helpers/controller_helper.php"
+
+
+                  ]
     },
     "autoload-dev": {
         "psr-4": {

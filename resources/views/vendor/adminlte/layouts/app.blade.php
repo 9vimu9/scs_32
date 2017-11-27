@@ -48,6 +48,7 @@ desired effect
         			<div class="col-md-12">
                 <!-- Your Page Content Here -->
                 @yield('main-content')
+              
               </div>
             </div>
           </div>

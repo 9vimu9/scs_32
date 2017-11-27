@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\scs;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ItemsController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +14,10 @@ class ItemsController extends Controller
      */
     public function index()
     {
-        //
+      $items=$this->AllRecords('App\Item');
+      $view_data=['items'=>$items];
+      $view_data=IndexTemplateMetaData($view_data,'c',"Item",'items');
+      return view('scs.items.index',$view_data);
     }
 
     /**
@@ -34,7 +38,8 @@ class ItemsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      return $this->StoreData('items',$request->all(),"App\Item");
+
     }
 
     /**
@@ -56,7 +61,11 @@ class ItemsController extends Controller
      */
     public function edit($id)
     {
-        //
+      $editing_item='App\Item'::find($id);
+      $items=$this->AllRecords('App\Item');
+      $view_data=['items'=>$items,'editing_item'=>$editing_item];
+      $view_data=IndexTemplateMetaData($view_data,'u',"Item",'items',$id);
+      return view('scs.items.index',$view_data);
     }
 
     /**
@@ -68,7 +77,8 @@ class ItemsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      return $this->UpdateData('items',$request->all(),'App\Item',$id);
+
     }
 
     /**
