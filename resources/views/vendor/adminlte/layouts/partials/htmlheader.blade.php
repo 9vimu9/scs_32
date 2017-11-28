@@ -5,11 +5,22 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    {{-- datatables --}}
+    <link href="{{ asset('css/libs/datatables.min.css') }}" rel="stylesheet">
+
     <link href="{{ mix('/css/all.css') }}" rel="stylesheet" type="text/css" />
+
+    <link href="{{ asset('/css/main.css') }}" rel="stylesheet" type="text/css" />
+    {{-- this main.css includes my edits --}}
+
     {{-- parsley --}}
     <link href="{{ asset('css/libs/parsley.css') }}" rel="stylesheet">
+
     {{-- datetrangepicker --}}
     <link href="{{ asset('css/libs/daterangepicker.css') }}" rel="stylesheet">
+
+
+
 
 
 
@@ -22,6 +33,9 @@
 
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+
 
     <script>
         //See https://laracasts.com/discuss/channels/vue/use-trans-in-vuejs

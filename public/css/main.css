@@ -1,0 +1,8 @@
+/*my css edits*/
+
+/* center a table */
+.table-center {
+  border-radius: 5px;
+  margin: 0px auto;
+  float: none;
+}

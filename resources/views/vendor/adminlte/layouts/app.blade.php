@@ -29,7 +29,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="skin-blue sidebar-mini">
+<body class="skin-black sidebar-mini">
 <div id="app" v-cloak>
     <div class="wrapper">
 
@@ -48,7 +48,7 @@ desired effect
         			<div class="col-md-12">
                 <!-- Your Page Content Here -->
                 @yield('main-content')
-              
+
               </div>
             </div>
           </div>

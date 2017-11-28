@@ -31,8 +31,41 @@
 
 
 @endsection
+{{-- id
+title=>title of the table
+class=>extra classes for table
+table_width=>width of the table
+columns=>column names associtve array column => column_width
+tbody=>body of the table --}}
 
 @section('table')
-  table here
+
+  @component('adminlte::layouts.components.table')
+    @slot('title')inventory data @endslot
+    @slot('id')items_index @endslot
+    @slot('table_width')60 @endslot
+    @slot('columns',[
+          '#'=>10,
+          'name'=>30,
+          'quantity'=>15,
+          'status'=>15,
+          ''=>25
+        ])
+
+
+    @slot('tbody')
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+      </tr>
+
+    @endslot
+
+
+  @endcomponent
 
 @endsection
