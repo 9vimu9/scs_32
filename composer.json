@@ -26,8 +26,13 @@
             "App\\": "app/"
         },
         "files" : [
-                    "app/Helpers/trait_helper.php",
-                    "app/Helpers/controller_helper.php"
+                    "app/Helpers/Btns.php",
+                    "app/Helpers/IndexTemplateMetaData.php",
+                    "app/Helpers/CheckStatus.php",
+
+                    "app/Helpers/BtnConfirmations.php"
+
+
 
 
                   ]

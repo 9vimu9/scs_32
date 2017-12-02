@@ -36,15 +36,15 @@ parameters
 
 @section('script')
   <script>
-  $(function () {
+  jQuery(document).ready(function( $ ) {
     $('#{{$id}}').DataTable({
       'paging'      : true,
       'lengthChange': false,
       'searching'   : false,
       'ordering'    : true,
-      'info'        : true,
+      'info'        : false,
       'autoWidth'   : true
     })
   })
   </script>
-@endsection
+@append

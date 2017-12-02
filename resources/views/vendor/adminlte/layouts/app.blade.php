@@ -5,9 +5,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 
-@section('htmlheader')
+{{-- @section('htmlheader') --}}
     @include('adminlte::layouts.partials.htmlheader')
-@show
+{{-- @show --}}
 
 <!--
 BODY TAG OPTIONS:
@@ -60,9 +60,9 @@ desired effect
 
 </div><!-- ./wrapper -->
 </div>
-@section('scripts')
+{{-- @section('scripts') --}}
     @include('adminlte::layouts.partials.scripts')
-@show
+{{-- @show --}}
 
 @yield('script')
 

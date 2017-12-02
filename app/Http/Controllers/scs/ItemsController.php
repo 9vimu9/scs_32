@@ -39,7 +39,6 @@ class ItemsController extends Controller
     public function store(Request $request)
     {
       return $this->StoreData('items',$request->all(),"App\Item");
-
     }
 
     /**

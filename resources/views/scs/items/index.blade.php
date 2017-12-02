@@ -39,29 +39,45 @@ columns=>column names associtve array column => column_width
 tbody=>body of the table --}}
 
 @section('table')
+  {{-- <a class="btn btn-large btn-primary" data-toggle="confirmation" data-title="Open Google?"
+   href="https://google.com" target="_blank">Confirmation</a> --}}
 
   @component('adminlte::layouts.components.table')
-    @slot('title')inventory data @endslot
-    @slot('id')items_index @endslot
-    @slot('table_width')60 @endslot
+    @slot('title','inventory data')
+    @slot('id','items_index')
+    @slot('table_width','100')
     @slot('columns',[
-          '#'=>10,
-          'name'=>30,
-          'quantity'=>15,
+          '#'=>7,
+          'name'=>25,
+          'amount'=>15,
+          'amount available'=>15,
           'status'=>15,
-          ''=>25
+          ''=>20
         ])
 
 
     @slot('tbody')
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      @foreach ($items as $item)
+        <tr>
+          <td>{{$item->id}}</td>
+          <td>{{$item->name}}</td>
+          <td>{{$item->quantity}}</td>
+          <td>{{$item->available_quantity}}</td>
+          <td>{{CheckStatus($item)}}</td>
+          <td>
+            {{BtnTemplates('edit','items/'.$item->id.'/edit')}} |
+            {{-- {{BtnTemplates('remove','items/'.$item->id)}} --}}
 
-      </tr>
+            @component('adminlte::layouts.components.RemoveObjectBtn')
+              @slot('url','items/'.$item->id)
+            @endcomponent
+
+
+          </td>
+
+        </tr>
+      @endforeach
+
 
     @endslot
 
@@ -69,3 +85,14 @@ tbody=>body of the table --}}
   @endcomponent
 
 @endsection
+
+@section('script')
+  <script type="text/javascript">
+  $('[data-toggle=confirmation]').confirmation({
+  rootSelector: '[data-toggle=confirmation]',
+   container: 'body'
+});
+
+  </script>
+
+@append
