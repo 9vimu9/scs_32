@@ -25,3 +25,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::resource('items','scs\ItemsController');
+Route::resource('customers','scs\CustomersController');

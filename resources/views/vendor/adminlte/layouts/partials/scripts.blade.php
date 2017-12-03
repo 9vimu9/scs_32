@@ -26,10 +26,7 @@ note:both compulsory--}}
 
 {{-- home made scripts --}}
 <script src="{{ asset('js/home_made/date_time.js') }}"></script>
-
-
-
-
+<script src="{{ asset('js/home_made/confirmations.js') }}"></script>
 
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

@@ -9,8 +9,8 @@
 
 
   @component('adminlte::layouts.components.input_fields.name')
-    @slot('label_width') 3	@endslot
-    @slot('input_width') 5	@endslot
+    @slot('label_width','3')
+    @slot('input_width','5')
     @slot('error'){{$errors->first('name')}}	@endslot
     @slot('value'){{isset($editing_item) ? $editing_item->name : old('name')}}@endslot
     @slot('validation')
@@ -19,9 +19,9 @@
   @endcomponent
 
   @component('adminlte::layouts.components.input_fields.number')
-    @slot('label') initial quantity	@endslot
-    @slot('name')initial_quantity @endslot
-    @slot('label_width') 3	@endslot
+    @slot('label','initial quantity')
+    @slot('name','initial_quantity')
+    @slot('label_width','3')
     @slot('error'){{$errors->first('initial_quantity')}}	@endslot
     @slot('value'){{isset($editing_item) ? $editing_item->initial_quantity : old('initial_quantity')}}@endslot
     @slot('validation')
@@ -39,9 +39,6 @@ columns=>column names associtve array column => column_width
 tbody=>body of the table --}}
 
 @section('table')
-  {{-- <a class="btn btn-large btn-primary" data-toggle="confirmation" data-title="Open Google?"
-   href="https://google.com" target="_blank">Confirmation</a> --}}
-
   @component('adminlte::layouts.components.table')
     @slot('title','inventory data')
     @slot('id','items_index')
@@ -49,12 +46,11 @@ tbody=>body of the table --}}
     @slot('columns',[
           '#'=>7,
           'name'=>25,
-          'amount'=>15,
-          'amount available'=>15,
-          'status'=>15,
+          'amount'=>12,
+          'amount available'=>12,
+          'status'=>12,
           ''=>20
         ])
-
 
     @slot('tbody')
       @foreach ($items as $item)
@@ -63,15 +59,21 @@ tbody=>body of the table --}}
           <td>{{$item->name}}</td>
           <td>{{$item->quantity}}</td>
           <td>{{$item->available_quantity}}</td>
-          <td>{{CheckStatus($item)}}</td>
           <td>
-            {{BtnTemplates('edit','items/'.$item->id.'/edit')}} |
-            {{-- {{BtnTemplates('remove','items/'.$item->id)}} --}}
+            @component('adminlte::layouts.components.ChangeStatus')
+              @slot('object',$item)
+            @endcomponent
+          </td>
+          <td>
+            {!!BtnLinkTemplates('edit_no_cap',route('items.edit', ['id' => $item->id]),null,null)!!}
 
             @component('adminlte::layouts.components.RemoveObjectBtn')
-              @slot('url','items/'.$item->id)
-            @endcomponent
+              @slot('url',route('items.destroy', ['id' => $item->id]))
 
+            @endcomponent
+            |
+            {!!BtnLinkTemplates('more_info','items/'.$item->id.'/edit',null,null)!!} |
+            {!!CreateBtn('price',NULL,'success',NULL,NULL,'usd','add or change price',NULL) !!}
 
           </td>
 
@@ -87,12 +89,6 @@ tbody=>body of the table --}}
 @endsection
 
 @section('script')
-  <script type="text/javascript">
-  $('[data-toggle=confirmation]').confirmation({
-  rootSelector: '[data-toggle=confirmation]',
-   container: 'body'
-});
 
-  </script>
 
 @append

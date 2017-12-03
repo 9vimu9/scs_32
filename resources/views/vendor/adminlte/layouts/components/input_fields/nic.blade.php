@@ -17,8 +17,8 @@
       class="form-control"
       name="{{$name ?? 'nic'}}"
       value='{{$value ?? ""}}'
-      placeholder="enter NIC here"
-      {{$validation}}
+      placeholder="NIC here"
+      {{$validation ?? ''}}
       data-parsley-trigger="focusin focusout"
       data-parsley-pattern="^[0-9]{9}$"
     >

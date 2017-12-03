@@ -29,8 +29,7 @@
                     "app/Helpers/Btns.php",
                     "app/Helpers/IndexTemplateMetaData.php",
                     "app/Helpers/CheckStatus.php",
-
-                    "app/Helpers/BtnConfirmations.php"
+                    "app/Helpers/Confirmations.php"
 
 
 
