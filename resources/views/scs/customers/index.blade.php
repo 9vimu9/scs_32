@@ -13,9 +13,7 @@
     @slot('input_width','5')
     @slot('error'){{$errors->first('name')}}	@endslot
     @slot('value'){{isset($editing_customer) ? $editing_customer->name : old('name')}}@endslot
-    @slot('validation')
-      required
-    @endslot
+    @slot('validation','required')
   @endcomponent
 
   @component('adminlte::layouts.components.input_fields.nic')
@@ -28,6 +26,8 @@
     @slot('label_width','3')
     @slot('error'){{$errors->first('tel')}}	@endslot
     @slot('value'){{isset($editing_customer) ? $editing_customer->tel : old('tel')}}@endslot
+    @slot('validation','required')
+
   @endcomponent
 
 
@@ -36,9 +36,8 @@
     @slot('input_width','8')
     @slot('error'){{$errors->first('address')}}	@endslot
     @slot('value'){{isset($editing_customer) ? $editing_customer->address : old('address')}}@endslot
-    @slot('validation')
-      required
-    @endslot
+    @slot('validation','required')
+
   @endcomponent
 
   @component('adminlte::layouts.components.input_fields.custom')
@@ -51,9 +50,8 @@
     @slot('validation','required')
     @slot('error'){{$errors->first('email')}}	@endslot
     @slot('value'){{isset($editing_customer) ? $editing_customer->email : old('email')}}@endslot
-    @slot('validation')
-      required
-    @endslot
+    @slot('validation','required')
+
   @endcomponent
 @endsection
 {{-- id
